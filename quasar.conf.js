@@ -38,7 +38,7 @@ module.exports = function (ctx) {
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
         '/api': {
-          target: 'http://localhost:8081/',
+          target: 'http://m.mywsq.cn/',
           changeOrigin: true,
           pathRewrite: {
             '^/api': ''
@@ -65,6 +65,7 @@ module.exports = function (ctx) {
         'QCardTitle',
         'QCardMain',
         'QCardActions',
+        'QCardSeparator',
         "QField",
         "QInput",
         "QDatetime",

@@ -23,7 +23,7 @@
       enter-active-class="animated fadeInUp"
       >
       <div class="row q-mx-md q-ml-lg justify-center">
-        <h3>你好, buptQuestionnaire</h3>
+        <h3>你好, buptQuestionnaire</h3>  
       </div>
       </transition>
       <div class="q-mx-md relative-position">
@@ -46,13 +46,16 @@
         <q-inner-loading :visible="loading>0">
           <q-spinner-gears size="50px" color="primary"/>
         </q-inner-loading>
+        <span v-on:click="quit" style="margin:0 40%">注销账户</span>
     </div>
+    
     </div>
   </div>
 </template>
 <script>
 import gql from "graphql-tag";
 import AnswerAnalyse from "../../components/answerAnalyse";
+import { deleteCookies, getCookies } from '../../assets/js/cookie';
 export default {
   data() {
     return {
@@ -66,6 +69,15 @@ export default {
     show(oid) {
       this.curOid = oid;
       this.opened = true;
+    },
+    quit() {
+      deleteCookies('username');
+      this.$router.push("/login");
+    }
+  },
+  mounted(){
+    if (!getCookies('username')) {
+      this.$router.push("/login");
     }
   },
   components: { AnswerAnalyse },

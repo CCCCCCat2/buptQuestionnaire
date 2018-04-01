@@ -57,7 +57,9 @@ import gql from "graphql-tag";
 import Loading from "quasar";
 import questionList from "../components/questionList.vue";
 import addSurvey from "../components/addSurvey";
-import VueQRCodeComponent from 'vue-qrcode-component'
+import VueQRCodeComponent from 'vue-qrcode-component';
+import { getCookies } from '../assets/js/cookie';
+
 export default {
   name: "PageIndex",
   data() {
@@ -69,8 +71,10 @@ export default {
       loading:0
     };
   },
-  computed: {
-    
+  mounted() {
+    if (!getCookies('username')) {
+      this.$router.push("/login");
+    }
   },
   components: { questionList, addSurvey,'qr-code':VueQRCodeComponent},
   methods: {

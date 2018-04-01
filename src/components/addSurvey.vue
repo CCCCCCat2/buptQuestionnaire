@@ -1,8 +1,8 @@
 <template>
 <div class="q-ma-md q-mt-xl">
   <q-input v-model="surveyInput.title" float-label="标题" class="q-my-lg"/>
-  <q-input v-model="surveyInput.subTitle" float-label="副标题(非必填)" class="q-my-lg"/>
-  <q-input v-model="surveyInput.information" float-label="介绍" class="q-my-lg"/>
+  <q-input v-model="surveyInput.subTitle" float-label="副标题" class="q-my-lg"/>
+  <q-input v-model="surveyInput.information" float-label="问卷简介" class="q-my-lg"/>
   <q-datetime v-model="surveyInput.startDate" type="date" float-label="开始时间" class="q-my-lg" format-model='number'/>
   <q-datetime v-model="surveyInput.endDate" type="date" float-label="结束时间(非必填)" class="q-my-lg" format-model='number'/>
   <div class="row justify-end">

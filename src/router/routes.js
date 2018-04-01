@@ -11,6 +11,11 @@ export default [{
         path: 'analyse',
         component: () =>
         import ('pages/analyse/index')
+      },
+      {
+        path:'login',
+        component: () =>
+        import('pages/login/index')
       }
     ]
   },
